@@ -1,17 +1,7 @@
-
-// import EMS from  '@/app/ems-data/page';
-// export default function Home() {
-//   return (
-//     <div className="container p-4 mx-auto">
-//     <EMS />
-//       </div>  
-// );
-// }   
-
 'use client';
 
 import { useState, useEffect } from 'react';
-import styles from './index.module.css'; // Ensure you have this CSS module or create it
+import styles from '@/app/styles/index.module.css';
 
 interface Employee {
   id: number;
@@ -23,7 +13,7 @@ interface Employee {
   
 }
 
-export default function Home() {
+export default function EMS() {
   const [employees, setEmployees] = useState<Employee[]>([]);
   const [newEmployee, setNewEmployee] = useState<Omit<Employee, 'id'>>({
     name: '',
