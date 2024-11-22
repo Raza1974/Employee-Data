@@ -8,7 +8,7 @@ import { Label } from "@/app/components/ui/label";
 
 export default function EmployeeData() {
   const [employeeData, setEmployeeData] = useState({
-    empNo: "",
+   id : "",
     name: "",
     fatherName: "",
     designation: "",

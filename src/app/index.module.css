@@ -1,55 +1,138 @@
+/* General Container Styles */
 .container {
-    display: flex;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  background-color: #f8f9fa;
+}
+
+.title {
+  font-size: 4rem;
+  margin-bottom: 20px;
+  color: #343a40;
+}
+
+.header {
+  width: 100%;
+  background-color: #2c3e50; /* Dark background */
+  padding: 20px 0; /* Padding around the header */
+}
+
+.headerContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.logoContainer {
+  flex: 1;
+}
+
+.logoImage {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+.navLinks {
+  display: flex;
+  gap: 20px;
+}
+
+.navLinks a {
+  text-decoration: none;
+  color: #ecf0f1; /* Light text color */
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.navLinks a:hover {
+  color: #f39c12; /* Color on hover */
+  text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+  .headerContainer {
     flex-direction: column;
-    align-items: center;
-    padding: 20px;
-    background-color: #f8f9fa;
+    align-items: flex-start;
   }
-  
-  .title {
-    font-size: 2rem;
-    margin-bottom: 20px;
-    color: #343a40;
-  }
-  
-  .form {
-    display: flex;
+
+  .navLinks {
     flex-direction: column;
     gap: 10px;
-    margin-bottom: 20px;
-    width: 100%;
-    max-width: 400px;
   }
-  
-  .form input,
-  .form button {
-    padding: 10px;
-    font-size: 1rem;
-    border: 1px solid #ccc;
-    border-radius: 5px;
+
+  .navLinks a {
+    font-size: 14px;
   }
-  
-  .form button {
-    background-color: #007bff;
-    color: white;
-    cursor: pointer;
-  }
-  
-  .table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-top: 20px;
-  }
-  
-  .table th,
-  .table td {
-    border: 1px solid #ddd;
-    padding: 8px;
-    text-align: left;
-  }
-  
-  .table th {
-    background-color: #f4f4f4;
-    color: #333;
-  }
-  
+}
+
+
+/* Form Styling */
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 20px;
+  width: 100%;
+  max-width: 400px;
+}
+
+.form input,
+.form button {
+  padding: 10px;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.form button {
+  background-color: #007bff;
+  color: white;
+  cursor: pointer;
+}
+
+/* Table Styling */
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+.table th,
+.table td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: left;
+}
+
+.table th {
+  background-color: #007bff;
+  color: white;
+}
+
+/* Footer Styles */
+.footer {
+  padding: 20px;
+  background-color: #333;
+  color: white;
+}
+
+.footer a {
+  text-decoration: none;
+  color: #007bff;
+  transition: color 0.3s ease;
+}
+
+.footer a:hover {
+  color: #0056b3;
+}
+
+.footer .footer-link {
+  margin-right: 10px;
+}

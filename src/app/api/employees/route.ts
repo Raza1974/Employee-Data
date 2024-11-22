@@ -2,30 +2,44 @@ import { NextResponse } from 'next/server';
 
 const employees = [
   {
-    id: 1,
-    name: "John Doe",
-    fatherName: "Michael Doe",
+    id: 'E123', // Employee ID is a string
+    name: "Javeed Ahmed",
+    fatherName: "Imran Ahmed",
     designation: "Software Engineer",
     bps: 17,
     placeOfPosting: "Islamabad"
+    
   },
   {
-    id: 2,
-    name: "Jane Smith",
-    fatherName: "Robert Smith",
+    id: 'E124', // Employee ID is a string
+    name: "Pervez Rasheed",
+    fatherName: "Iqbal Rasheed",
     designation: "Project Manager",
     bps: 18,
     placeOfPosting: "Lahore"
   }
 ];
 
+// Get all employees
 export async function GET() {
   return NextResponse.json(employees);
 }
 
+// Add a new employee
 export async function POST(request: Request) {
   const newEmployee = await request.json();
-  newEmployee.id = employees.length + 1;
+  
+  // Ensure the ID is provided and can be both a string and a number
+  if (!newEmployee.id) {
+    return NextResponse.json({ error: 'Employee ID is required' }, { status: 400 });
+  }
+
+  // If the ID is not a string, convert it to a string to maintain consistency
+  newEmployee.id = String(newEmployee.id);
+
+  // Push the new employee to the list
   employees.push(newEmployee);
+
+  // Return the added employee
   return NextResponse.json(newEmployee, { status: 201 });
 }
